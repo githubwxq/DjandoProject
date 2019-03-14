@@ -17,6 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
 
+#项目的url配置文件  需要添加配置项目
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'', include('booktest.urls')),
+
+
+
+
+
 ]

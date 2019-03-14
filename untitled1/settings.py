@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...) 项目目录的决对路径
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
