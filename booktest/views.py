@@ -13,15 +13,22 @@ def index(request):
     #进行处理和m和t 进行交互
     # 1加载模板文件
     temp=loader.get_template('booktest/index.html')
-    # 2定义上下文传递数据
-    context= RequestContext(request,{})
+    # 2定义上下文传递数据  ##必须加上单引号
+    c = {'foo': 'bar','list':{'orange', 'banana', 'pear', 'apple'}}
     # 3 模板渲染：产生标准的html内容
-    res_html= temp.render(context)
+    res_html= temp.render(c,request)
     # 4 返回给浏览器
     return HttpResponse(res_html);
 
 
 def index2(request):
     #进行处理和m和t 进行交互
-    return HttpResponse("index2")
-
+    # return HttpResponse("index2")
+    # 1加载模板文件
+    temp=loader.get_template('booktest/index.html')
+    # 2定义上下文传递数据
+    context= RequestContext(request,{})
+    # 3 模板渲染：产生标准的html内容
+    res_html= temp.render(context)
+    # 4 返回给浏览器
+    return HttpResponse(res_html);
