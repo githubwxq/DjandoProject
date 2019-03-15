@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader ,RequestContext,context
+from django.test import TestCase
+from booktest.models import BookInfo,HeroInfo
+from datetime import date
 #  接收请求进行处理 与m何t 层交互返回应答 定义视图函数
 #  定义视图函数 httprequest
 
@@ -12,6 +15,13 @@ from django.template import loader ,RequestContext,context
 def index(request):
     #进行处理和m和t 进行交互
     # 1加载模板文件
+
+    b=BookInfo()
+    b.bittle="天龙八部"
+    b.bpub_date=date(1990,1,1);
+    b.save()
+
+
     temp=loader.get_template('booktest/index.html')
     # 2定义上下文传递数据  ##必须加上单引号
     c = {'foo': 'bar','list':{'orange', 'banana', 'pear', 'apple'}}
