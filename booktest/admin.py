@@ -4,9 +4,5 @@ from booktest.models import BookInfo,HeroInfo
 #
 # class BookInfoAdmin(admin.ModelAdmin):
 #     list_display= ["id","btitle","bpub_date"]
-
-
-
-
 admin.site.register(BookInfo)
 admin.site.register(HeroInfo)
